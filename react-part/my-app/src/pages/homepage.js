@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Fetch from '../components/fetch';
 import Search from '../components/search';
-import { getBy } from '../utils/utils';
+import { getByFetch } from '../utils/utils';
 import { Preloader } from 'react-materialize';
 import '../style/App.css';
 import { Redirect } from 'react-router';
@@ -35,7 +35,7 @@ class Homepage extends Component {
             rows: [],
         });
 
-        getBy(obj.from, obj.to).then(values => {
+        getByFetch(obj.from, obj.to).then(values => {
             this.setState({
                 rows: values,
             });
